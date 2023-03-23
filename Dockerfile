@@ -19,8 +19,7 @@ RUN set -ex \
 	&& /root/xray.sh \
 	&& rm -fv /root/xray.sh \
 	&& wget -O /usr/share/xray/geosite.dat https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat \
-	&& wget -O /usr/share/xray/geoip.dat https://github.com/v2fly/geoip/releases/latest/download/geoip.dat\
-	&& docker run -d -p 9000:9000 --name xray --restart=always -v /etc/xray:/etc/xray teddysun/xray
+	&& wget -O /usr/share/xray/geoip.dat https://github.com/v2fly/geoip/releases/latest/download/geoip.dat
 	
 VOLUME /etc/xray
 ENV TZ=Asia/Shanghai
