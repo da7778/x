@@ -15,8 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-       uses: elgohr/Publish-Docker-Github-Action@v3
-        with:
+      uses: elgohr/Publish-Docker-Github-Action@v3
+       with:
           # 下方的name格式为：Docker Hub ID/自定义镜像名称
           name: lpddns/x
           username: '${{ secrets.DOCKER_USERNAME }}'
