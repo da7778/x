@@ -1,7 +1,8 @@
 {
   "inbounds": [
     {
-      "port": 10086,
+      "listen": "127.0.0.1",
+      "port": 80,
       "protocol": "vmess",
       "settings": {
         "clients": [
