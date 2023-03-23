@@ -23,4 +23,4 @@ RUN set -ex \
 
 VOLUME /etc/xray
 ENV TZ=Asia/Shanghai
-CMD [ "/usr/bin/xray", "-config", "/etc/xray/config.json", "-p" "80:80" ]
+CMD [ "/usr/bin/xray", "-config", "/etc/xray/config.json", "-p", "80:80" ]
