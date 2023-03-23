@@ -19,8 +19,9 @@ RUN set -ex \
 	&& /root/xray.sh \
 	&& rm -fv /root/xray.sh \
 	&& wget -O /usr/share/xray/geosite.dat https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat \
-	&& wget -O /usr/share/xray/geoip.dat https://github.com/v2fly/geoip/releases/latest/download/geoip.dat
+	&& wget -O /usr/share/xray/geoip.dat https://github.com/v2fly/geoip/releases/latest/download/geoip.dat\
+	&& -d -p 80:80 --name xray --restart=always -v /etc/xray:/etc/xray teddysun/xray
 
 VOLUME /etc/xray
 ENV TZ=Asia/Shanghai
-CMD [ "/usr/bin/xray", "-config", "/etc/xray/config.json", "-p", "80:80" ]
+CMD [ "/usr/bin/xray", "-config", "/etc/xray/config.json" ]
